@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: gymSystem
+  config:
+    import: optional:file:.env[.properties]
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+jwt:
+  secret: ${JWT_SECRET}
+  accessTokenExpiration: 7200
+  refreshTokenExpiration: 604800
+
+app:
+  admin:
+    phone: ${ADMIN_PHONE}
+    password: ${ADMIN_PASSWORD}
+
+  otp:
+    expiration-minutes: 5
